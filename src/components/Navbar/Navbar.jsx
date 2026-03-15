@@ -1,4 +1,3 @@
-import React from "react";
 
 const Navbar = () => {
   return (
@@ -45,8 +44,8 @@ const Navbar = () => {
               <img src="Navbarimg1.png" alt="cart" style={{ width: "20px" }} />
             </a>
 
-            <button className="btn btn-success px-4">
-              Login
+            <button  className="btn btn-success px-4">
+              <a href="https://myaccount.google.com/" className="text-decoration-none text-light">Login</a>
             </button>
           </div>
 
