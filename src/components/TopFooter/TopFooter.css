@@ -1,0 +1,43 @@
+.topfooter-container {
+  width: 100%;
+  height: 88px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #46A3581A;
+  flex-wrap: wrap;
+}
+
+.topfooter-logo img {
+  height: 40px;
+}
+
+.topfooter-contacts {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.topfooter-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Mobile (<576px) */
+@media (max-width: 576px) {
+  .topfooter-logo {
+    display: none; /* logo yo‘qoladi */
+  }
+
+  .topfooter-contact-item span {
+    font-size: 12px; /* matn kichrayadi */
+  }
+
+  .topfooter-contacts {
+    gap: 0.5rem;
+  }
+}
