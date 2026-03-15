@@ -1,4 +1,3 @@
-// TopFooter.jsx
 import React from "react";
 import './TopFooter.css';
 

@@ -27,14 +27,13 @@
   gap: 0.25rem;
 }
 
-/* Mobile (<576px) */
 @media (max-width: 576px) {
   .topfooter-logo {
-    display: none; /* logo yo‘qoladi */
+    display: none; 
   }
 
   .topfooter-contact-item span {
-    font-size: 12px; /* matn kichrayadi */
+    font-size: 12px; 
   }
 
   .topfooter-contacts {

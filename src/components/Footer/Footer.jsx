@@ -4,7 +4,6 @@ const Footer = () => {
       <div className="container">
         <div className="row gy-4">
 
-          {/* My Account */}
           <div className="col-6 col-md-3">
             <h6 className="fw-bold">My Account</h6>
             <ul className="list-unstyled text-muted small">
@@ -16,7 +15,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Help & Guide */}
           <div className="col-6 col-md-3">
             <h6 className="fw-bold">Help & Guide</h6>
             <ul className="list-unstyled text-muted small">
@@ -28,7 +26,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Categories */}
           <div className="col-6 col-md-3">
             <h6 className="fw-bold">Categories</h6>
             <ul className="list-unstyled text-muted small">
@@ -40,7 +37,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social Media */}
           <div className="col-6 col-md-3">
             <h6 className="fw-bold">Social Media</h6> 
 
@@ -70,7 +66,6 @@ const Footer = () => {
 
         </div>
 
-        {/* Bottom */}
         <div className="text-center border-top mt-4 pt-3 pb-2 small text-muted">
           © 2021 GreenShop. All Rights Reserved.
         </div>

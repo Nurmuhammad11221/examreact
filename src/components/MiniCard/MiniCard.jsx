@@ -4,8 +4,6 @@ const MiniCard = () => {
   return (
     <div className="container py-5">
       <div className="row g-4">
-
-        {/* Card 1 */}
         <div className="col-12 col-md-6 col-lg-3">
           <div className="p-4 border rounded text-center">
             <img
@@ -21,7 +19,6 @@ const MiniCard = () => {
           </div>
         </div>
 
-        {/* Card 2 */}
         <div className="col-12 col-md-6 col-lg-3">
           <div className="p-4 border rounded text-center">
             <img
@@ -37,7 +34,6 @@ const MiniCard = () => {
           </div>
         </div>
 
-        {/* Card 3 */}
         <div className="col-12 col-md-6 col-lg-3">
           <div className="p-4 border rounded text-center">
             <img
@@ -53,7 +49,6 @@ const MiniCard = () => {
           </div>
         </div>
 
-        {/* Newsletter Section (no border) */}
         <div className="col-12 col-md-6 col-lg-3 d-flex flex-column justify-content-center">
           <h5 className="mb-3">Would you like to join newsletters?</h5>
           <div className="input-group mb-3">
