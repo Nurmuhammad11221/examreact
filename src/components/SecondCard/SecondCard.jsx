@@ -1,6 +1,3 @@
-import React from 'react';
-
-// Ma'lumotlar massivi - rasmlar public papkasidan olinadi
 const blogData = [
   {
     id: 1,
@@ -31,7 +28,6 @@ const blogData = [
 const SecondCard = () => {
   return (
     <section className="container py-5">
-      {/* Sarlavha qismi */}
       <div className="text-center mb-5">
         <h2 className="fw-bold">Our Blog Posts</h2>
         <p className="text-muted small">
@@ -42,12 +38,8 @@ const SecondCard = () => {
       <div className="row g-4">
         {blogData.map((item) => (
           <div key={item.id} className="col-12 col-md-6 col-lg-3">
-            {/* Karta dizayni */}
             <div className="card h-100 border-0 shadow-sm" style={{ backgroundColor: '#fbfbfb' }}>
-              <img 
-                src={item.image} 
-                className="card-img-top" 
-                alt={item.title}
+              <img src={item.image} className="card-img-top" alt={item.title}
                 style={{ height: '200px', objectFit: 'cover' }} 
               />
               <div className="card-body px-3">
@@ -57,10 +49,7 @@ const SecondCard = () => {
                 <p className="card-text text-muted small mb-3">
                   {item.description}
                 </p>
-                <a 
-                  href="#" 
-                  className="text-decoration-none text-success fw-bold small d-flex align-items-center"
-                >
+                <a href="#" className="text-decoration-none text-success fw-bold small d-flex align-items-center">
                   Read More <span className="ms-2">→</span>
                 </a>
               </div>

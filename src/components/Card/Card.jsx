@@ -2,14 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Card = ({ product }) => {
-  const navigate = useNavigate();
+  const yol = useNavigate();
 
-  if (!product) return null;
 
   return (
     <div className="col-12 col-sm-6 col-md-4">
       <div 
-        onClick={() => navigate(`/about/${product.id}`)} 
+        onClick={() => yol(`/about/${product.id}`)} 
         className="card h-100 border-0 position-relative" 
         style={{ 
           backgroundColor: '#FBFBFB', 

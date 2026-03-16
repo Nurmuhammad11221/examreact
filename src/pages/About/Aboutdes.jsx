@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Aboutdes = ({ product }) => {
   if (!product) return null;

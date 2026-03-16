@@ -21,22 +21,13 @@ const Hero = () => {
 
               <button 
                 className="btn btn-success mt-1 px-2 py-1 px-lg-4 py-lg-2 fw-bold" 
-                style={{ fontSize: 'calc(0.6rem + 0.2vw)', borderRadius: '6px' }}
-              >
+                style={{ fontSize: 'calc(0.6rem + 0.2vw)', borderRadius: '6px' }}>
                 SHOP NOW
               </button>
             </div>
 
             <div className="col-5 col-md-6 text-center">
-              <img
-                src="/Heroimg.png"
-                className="img-fluid"
-                style={{ 
-                  maxHeight: "clamp(120px, 25vw, 260px)",
-                  width: "auto" 
-                }}
-                alt="plant"
-              />
+              <img src="/Heroimg.png"className="img-fluid"style={{ maxHeight: "clamp(120px, 25vw, 260px)", width: "auto" }}/>
             </div>
 
           </div>

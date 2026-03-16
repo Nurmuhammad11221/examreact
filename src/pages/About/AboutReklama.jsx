@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Link komponenti router uchun shart
+import { Link } from 'react-router-dom'; 
 import api from '../../config/axios';
 
 const AboutReklama = () => {
     const [relatedProducts, setRelatedProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchRelated = async () => {
@@ -16,23 +15,18 @@ const AboutReklama = () => {
                 } else if (res.data && res.data.products) {
                     data = res.data.products;
                 }
-                // Tasodifiy 5 ta mahsulot
                 setRelatedProducts(data.sort(() => 0.5 - Math.random()).slice(0, 5));
             } catch (err) {
-                console.error("Related products xatosi:", err);
-            } finally {
-                setLoading(false);
-            }
+                console.error(err);
+            } 
         };
         fetchRelated();
     }, []);
 
-    // Sahifa o'zgarganda foydalanuvchini tepaga chiqarib qo'yish
     const handleScrollTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    if (loading) return null;
 
     return (
         <div className="container mt-5 mb-5">
@@ -44,12 +38,10 @@ const AboutReklama = () => {
 
             <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
                 {relatedProducts.map((item) => {
-                    // ID'ni tekshiramiz: backendda id yoki _id bo'lishi mumkin
                     const currentId = item.id || item._id;
 
                     return (
                         <div key={currentId} className="col">
-                            {/* YO'LNI TEKSHIRING: Agar sizda route /about/:id bo'lsa, shuni yozing */}
                             <Link 
                                 to={`/about/${currentId}`} 
                                 onClick={handleScrollTop}

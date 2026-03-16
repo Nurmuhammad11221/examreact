@@ -1,24 +1,21 @@
-import React from 'react';
-
 const MiniCard2 = () => {
     const MiniCardd = [
         {
             id: 1,
-            title: "SUMMER CACTUS\n& SUCCULENTS", // \n qator tashlash uchun
+            title: "SUMMER CACTUS\n& SUCCULENTS", 
             description: "We are an online plant shop offering a wide range of cheap and trendy plants.",
-            image: "/MiniCard5.png" // public papkasidagi rasm
+            image: "/MiniCard5.png"
         },
         {
             id: 2,
             title: "STYLING TRENDS\n& MUCH MORE",
             description: "We are an online plant shop offering a wide range of cheap and trendy plants.",
-            image: "/MiniCard6.png" // public papkasidagi rasm
+            image: "/MiniCard6.png" 
         }
     ];
     return (
         <section className="py-4 py-lg-5">
             <div className="container">
-                {/* g-4 kartalar orasidagi masofa uchun, flex-wrap mobil uchun */}
                 <div className="row g-4 flex-wrap">
                     {MiniCardd.map((card) => (
                         <div key={card.id} className="col-12 col-md-6">
@@ -27,10 +24,7 @@ const MiniCard2 = () => {
                                 style={{ minHeight: '240px' }}
                             >
                                 <div className="flex-shrink-0" style={{ width: '40%' }}>
-                                    <img
-                                        src={card.image}
-                                        className="img-fluid"
-                                        alt={card.title}
+                                    <img src={card.image} className="img-fluid"
                                         style={{
                                             maxHeight: "100%",
                                             maxWidth: "100%",
@@ -44,7 +38,7 @@ const MiniCard2 = () => {
                                         className="fw-bold mb-2 text-uppercase text-dark"
                                         style={{
                                             fontSize: 'calc(1.1rem + 0.3vw)',
-                                            whiteSpace: 'pre-line', // \n ni qatorga o'tkazish uchun 
+                                            whiteSpace: 'pre-line', 
                                             lineHeight: '1.2'
                                         }}
                                     >

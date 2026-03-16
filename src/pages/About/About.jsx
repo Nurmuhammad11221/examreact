@@ -4,7 +4,7 @@ import api from '../../config/axios';
 import AboutHero from './AboutHero';
 import Aboutdes from './Aboutdes';
 import AboutRiewes from './AboutRiewes';
-import AboutReklama from './AboutReklama'; // <-- 1. Import qilish
+import AboutReklama from './AboutReklama'; 
 
 const About = () => {
     const { id } = useParams();
@@ -23,7 +23,6 @@ const About = () => {
         fetchProduct();
     }, [id]);
 
-    if (!product) return <div className="text-center py-5">Yuklanmoqda...</div>;
 
     return (
         <div className="about-page-wrapper">
@@ -60,7 +59,6 @@ const About = () => {
                 </div>
             </div>
 
-            {/* --- 2. Related Products qismini shu yerga qo'yamiz --- */}
             <AboutReklama />
         </div>
     );
