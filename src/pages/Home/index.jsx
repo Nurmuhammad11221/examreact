@@ -61,7 +61,6 @@ const Home = () => {
 
       <SecondCard /> {/* Faqat Home'da */}
       <MiniCard2 />  {/* Faqat Home'da */}
-      <MiniCard />   {/* Faqat Home'da */}
     </>
   );
 };
