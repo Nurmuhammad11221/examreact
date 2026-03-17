@@ -9,7 +9,6 @@ const AboutReklama = () => {
         const fetchRelated = async () => {
             try {
                 const res = await api.get('/products');
-                // Backenddan kelgan 'products' massivini olish
                 const data = res.data.products || (Array.isArray(res.data) ? res.data : []);
                 setRelatedProducts(data.sort(() => 0.5 - Math.random()).slice(0, 5));
             } catch (err) {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router-dom"; // 1. useLocation qo'shildi
+import { Outlet, useLocation } from "react-router-dom"; 
 import Navbar from "../../components/Navbar/Navbar";
 import TopFooter from "../../components/TopFooter/TopFooter";
 import Footer from "../../components/Footer/Footer";
@@ -8,9 +8,8 @@ import MiniCard2 from "../../components/MiniCard2/MiniCard";
 import SecondCard from "../../components/SecondCard/SecondCard"; 
 
 const MainLayout = () => {
-  const location = useLocation(); // 2. Manzilni aniqlaymiz
+  const location = useLocation();
 
-  // 3. Agar manzil "/about" bilan boshlansa, true bo'ladi
   const isAboutPage = location.pathname.startsWith("/about");
 
   return (
