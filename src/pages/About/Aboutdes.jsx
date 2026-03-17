@@ -19,9 +19,7 @@ const Aboutdes = ({ product }) => {
 
   return (
     <div className="container mt-4 animate__animated animate__fadeIn">
-      <p className="text-muted small mb-4" style={{ lineHeight: '26px', textAlign: 'justify' }}>
-        {product.description}
-      </p>
+     
 
       {details.map((item, index) => (
         <div key={index} className="mt-4">

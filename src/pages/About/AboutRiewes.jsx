@@ -1,47 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../config/axios';
 
-const AboutRiewes = ({ productId, product }) => {
+const AboutRiewes = ({ productId }) => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    if (product && product.reviews) {
-      setReviews(product.reviews);
-    } else if (productId) {
-      const otzivReviews = async () => {
-        try {
-          const res = await api.get(`/reviews/product/${productId}`);
-          setReviews(res.data);
-        } catch (err) {
-          setReviews([]);
-        } finally {
-          setLoading(false);
-        }
-      };
-      otzivReviews();
-    }
-  }, [productId, product]);
+  const fetchAllReviews = async () => {
+    if (!productId) return;
+    try {
+      const res = await api.get('/reviews');
+      const allReviews = Array.isArray(res.data) ? res.data : (res.data.reviews);
+      
+      setReviews(allReviews); 
+
+    } catch (err) {
+    } 
+  };
+  fetchAllReviews();
+}, [productId]);
 
 
   return (
-    <div className="container mt-2 animate__animated animate__fadeIn">
-      {reviews && reviews.length > 0 ? (
+    <div className="container mt-2">
+      {reviews.length > 0 ? (
         reviews.map((rev, index) => (
-          <div key={index} className="mb-4 pb-3 border-bottom">
-            <div className="d-flex justify-content-between align-items-center">
+          <div key={rev._id || index} className="mb-4 pb-3 border-bottom animate__animated animate__fadeIn">
+            <div className="d-flex justify-content-between">
               <h6 className="fw-bold mb-1" style={{ fontSize: '14px' }}>
-                {rev.reviewerName || "Mijoz"}
+                {rev.user?.name || rev.name || "Mijoz"}
               </h6>
-              
             </div>
             <div className="text-warning mb-2" style={{ fontSize: '12px' }}>
-              {'★'.repeat(rev.rating || rev.stars || 5)}{'☆'.repeat(5 - (rev.rating || rev.stars || 5))}
+              {'★'.repeat(rev.rating || 5)}{'☆'.repeat(5 - (rev.rating))}
             </div>
-            <p className="text-muted small mb-0">"{rev.comment}"</p>
+            <p className="text-muted small mb-0">"{rev.comment || "Izoh yo'q"}"</p>
           </div>
         ))
       ) : (
-        <p className="text-muted text-center py-5 small">Ushbu mahsulotga hali sharh qoldirilmagan</p>
+        <div className="text-center py-5 bg-light rounded border">
+          <p className="text-secondary" style={{ fontSize: '10px' }}>
+            riewes
+          </p>
+        </div>
       )}
     </div>
   );

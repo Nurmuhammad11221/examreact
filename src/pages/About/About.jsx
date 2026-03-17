@@ -14,51 +14,43 @@ const About = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await api.get(`/products/${id || 1}`);
+                const res = await api.get(`/products/${id}`);
                 setProduct(res.data);
             } catch (err) {
                 console.error(err);
-            }
+            } 
         };
-        fetchProduct();
+        if (id) fetchProduct();
     }, [id]);
-
 
     return (
         <div className="about-page-wrapper">
             <AboutHero product={product} />
-
-            <div className="container" style={{ marginTop: '80px', marginBottom: '20px' }}>
-                <div className="d-flex align-items-center gap-4 border-bottom">
-                    <button
-                        onClick={() => setActiveTab('description')}
-                        className={`btn p-0 pb-2 border-0 fw-bold rounded-0 ${activeTab === 'description' ? 'text-success border-bottom border-success' : 'text-muted'}`}
-                        style={{ borderBottomWidth: '3px !important', marginBottom: '-1px' }}
+            <div className="container mt-5">
+                <div className="d-flex gap-4 border-bottom">
+                    <button 
+                      onClick={() => setActiveTab('description')} 
+                      className={`btn pb-2 rounded-0 border-0 ${activeTab === 'description' ? 'text-success border-bottom border-success fw-bold' : 'text-muted'}`}
+                      style={{ borderBottomWidth: '3px' }}
                     >
-                        Product Description
+                      Product Description
                     </button>
-
-                    <button
-                        onClick={() => setActiveTab('reviews')}
-                        className={`btn p-0 pb-2 border-0 fw-bold rounded-0 ${activeTab === 'reviews' ? 'text-success border-bottom border-success' : 'text-muted'}`}
-                        style={{ borderBottomWidth: '3px !important', marginBottom: '-1px' }}
+                    <button 
+                      onClick={() => setActiveTab('reviews')} 
+                      className={`btn pb-2 rounded-0 border-0 ${activeTab === 'reviews' ? 'text-success border-bottom border-success fw-bold' : 'text-muted'}`}
+                      style={{ borderBottomWidth: '3px' }}
                     >
-                        Reviews
+                      Reviews
                     </button>
                 </div>
-
                 <div className="mt-4">
                     {activeTab === 'description' ? (
                         <Aboutdes product={product} />
                     ) : (
-                        <AboutRiewes
-                            productId={product.id || product._id}
-                            product={product}
-                        />
+                        <AboutRiewes productId={id} product={product} />
                     )}
                 </div>
             </div>
-
             <AboutReklama />
         </div>
     );

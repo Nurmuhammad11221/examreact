@@ -6,9 +6,7 @@ const AboutHero = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState('S');
 
-  if (!product) {
-    return <div className="text-center p-5">Yuklanmoqda...</div>;
-  }
+  if (!product) return <div className="text-center p-5"></div>;
 
   return (
     <div className="container-fluid p-0" style={{ backgroundColor: '#F9F9F9' }}>
@@ -16,18 +14,23 @@ const AboutHero = ({ product }) => {
         <div className="row g-0 g-md-4 mt-md-4">
           
           <div className="col-md-6 bg-white p-4 text-center rounded">
-            <img src={product.thumbnail} className="img-fluid" style={{ maxHeight: '350px', objectFit: 'contain' }} />
+            <img 
+              src={product.pictures?.[0]} 
+              className="img-fluid" 
+              style={{ maxHeight: '350px', objectFit: 'contain' }} 
+              onError={(e) => e.target.src = 'https://via.placeholder.com/350'}
+            />
           </div>
 
           <div className="col-md-6 ps-md-5 p-4">
-            <h2 className="fw-bold text-dark">{product.title}</h2>
+            <h2 className="fw-bold text-dark">{product.name}</h2>
             <h4 className="text-success fw-bold mt-3 border-bottom pb-3">
               ${product.price}.00
             </h4>
 
             <div className="mt-4">
               <h6 className="fw-bold">Short Description:</h6>
-              <p className="text-muted">{product.description}</p>
+              <p className="text-muted">{product.description }</p>
             </div>
 
             <div className="mt-4">

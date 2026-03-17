@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  // URL oxirida slash bo'lsa, uni olib tashlagan ma'qul
-  baseURL: "https://dummyjson.com" 
+  baseURL: "https://e-commerce-api-v3.nt.azimumarov.uz/api/v1"
 });
 
 export default api;
