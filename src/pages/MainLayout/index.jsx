@@ -21,14 +21,13 @@ const MainLayout = () => {
         <Outlet />
       </main>
       
-      {/* 4. Faqat About sahifasi BO'LMAGANDAGINA ko'rsatamiz */}
       {!isAboutPage && (
         <>
           <SecondCard /> 
-          <MiniCard2 />
-          <MiniCard /> 
+          <MiniCard2 /> 
         </>
       )}
+      <MiniCard />
       
       <TopFooter />
       <Footer />
